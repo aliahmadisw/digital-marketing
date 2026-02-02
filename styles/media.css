@@ -1,0 +1,387 @@
+:root {
+  --text-color: hsl(0 0% 20%);
+  --white-color: hsl(0 0% 100%);
+  --border-radius-btn: 8px;
+  --primary-color: hsl(229 96.8% 49.4%);
+  --secondary-color: hsl(14 100% 56.7%);
+  --neutral-color1: hsl(0 0% 60%);
+  --neutral-color2: hsl(229 100% 96.7%);
+  --border-color: hsl(0 0% 85.5%);
+  --line-height: 1.8;
+}
+
+/*موبایل*/
+@media screen and (max-width: 767px) {
+  /* هدر */
+  /* .header :is(.menu-right, .menu-left, .logo) {
+    display: none;
+  } */
+
+  .header .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: var(--white-color);
+    width: 75%;
+    padding: 10px;
+    border-radius: 15px 0 0 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in;
+    z-index: 10;
+  }
+
+  .header .header-wrapper.active {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+  }
+
+  .submenu-open {
+    background: #5d5c5c6a;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    inset: 0;
+  }
+
+  .header nav ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  .header .logo {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .header .menu-right {
+    order: 2;
+    margin-bottom: 12px;
+  }
+
+  .header .menu-left {
+    order: 3;
+  }
+
+  .menu-right,
+  .menu-left {
+    align-self: flex-start;
+  }
+
+  .menu-right a,
+  .menu-left a {
+    font-size: 16px;
+  }
+
+  .header .logo a {
+    width: auto;
+    height: auto;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: normal;
+    background-color: transparent;
+    border-radius: 0;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .btn-close-menu-m {
+    width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    color: var(--white-color);
+    border: none;
+    font-size: 26px;
+    display: block;
+    cursor: pointer;
+    line-height: 40px;
+  }
+
+  .btn-close-menu-m:hover {
+    background-color: #d90202;
+  }
+  .btn-menu-m {
+    display: block;
+    background-color: inherit;
+    border: inherit;
+    font-size: 26px;
+    margin-right: 10px;
+  }
+
+  /* هیرو سکشن */
+  .hero-section {
+    margin-top: 10px;
+    row-gap: 40px;
+  }
+
+  .hero-section-top {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .hero-section-top-right {
+    row-gap: 20px;
+    align-items: stretch;
+    order: 2px;
+  }
+
+  .hero-section-top-left {
+    order: 1px;
+  }
+
+  .hero-section h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 29px;
+  }
+
+  .hero-section-top-right a {
+    text-align: center;
+  }
+
+  .hero-section-bottom {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .hero-section-top-left img,
+  .team-right img,
+  .help-left img {
+    width: 340px;
+  }
+
+  /* تیم */
+  .container.team-section {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    margin-block: 88px;
+  }
+
+  .team-left h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+  }
+
+  /* خدمات */
+  .services-section {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  /* مشتریان */
+  .clients-section {
+    margin-block: 88px;
+  }
+
+  .clients-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .clients-img img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .client-testimonial {
+    font-size: 15px;
+    padding-inline: 15px;
+  }
+
+  .client-name {
+    font-size: 20px;
+  }
+
+  .client-position {
+    font-size: 14px;
+  }
+
+  /* تخفیف */
+  .discount-wrapper h2 {
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .discount-wrapper form {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .discount-wrapper form :is(button, input) {
+    width: 100% !important;
+  }
+
+  #timer {
+    column-gap: 25px;
+  }
+
+  .timer-value {
+    font-size: 37px;
+  }
+
+  #timer-hours::before,
+  #timer-minutes::before {
+    font-size: 37px;
+    right: -8px;
+  }
+
+  /* نمونه کارها */
+  .portfolio-section {
+    margin-block: 88px;
+  }
+
+  .portfolio-section h2 {
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  #portfolio-images img:nth-child(n + 5) {
+    display: none;
+  }
+
+  /* تماس */
+  .help-section {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    margin-bottom: 88px;
+  }
+
+  .help-left {
+    order: 1;
+  }
+
+  .help-right {
+    order: 2;
+  }
+
+  .help-right h2 {
+    font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-right p {
+    text-align: center;
+  }
+
+  .help-right ul {
+    align-items: center;
+  }
+
+  /* فوتر */
+  .footer .footer-logo {
+    display: none;
+  }
+
+  .footer {
+    flex-direction: column;
+    row-gap: 12px;
+  }
+}
+
+/*تبلت*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* هدر */
+  .header .container > div {
+    width: 717px;
+  }
+
+  /* هیرو سکشن */
+  .hero-section {
+    margin-top: 40px;
+  }
+
+  .hero-section-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+  }
+
+  .hero-section-top-right {
+    row-gap: 30px;
+  }
+
+  .hero-section-feature p {
+    line-height: var(--line-height);
+  }
+
+  .hero-section-top-left img,
+  .team-right img,
+  .help-left img {
+    width: 355px;
+  }
+
+  /* تیم */
+  .container.team-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-left h2 {
+    font-size: 30px;
+  }
+
+  .team-left p {
+    width: 320px;
+  }
+
+  /* خدمات */
+  .service-card p {
+    font-size: 14px;
+  }
+
+  /* تخفیف */
+  .discount-wrapper h2 {
+    font-size: 30px;
+  }
+
+  /* مشتریان */
+  .clients-img img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* تماس */
+  .help-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .help-right h2 {
+    font-size: 30px;
+  }
+
+  /* فوتر */
+  .footer-section .footer-logo {
+    font-size: 17px;
+  }
+}
+
+/*موبایل-تبلت*/
+@media screen and (max-width: 1024px) {
+}
+
+/*دسکتاپ*/
+@media screen and (min-width: 1025px) {
+}
